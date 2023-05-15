@@ -7,7 +7,7 @@ class Review(db.Model):
     name = db.Column(db.String(200), nullable=True)
     text = db.Column(db.Text, nullable=True)
     rating = db.Column(db.Integer, nullable=True)
-    data = db.Column(db.DateTime, default=datetime.utcnow())
+    date = db.Column(db.DateTime, default=datetime.utcnow())
     movie_id = db.Column(db.Integer, db.ForeignKey("movie.id"), nullable=True)
     movie = db.relationship("Movie", back_populates="review")
 
